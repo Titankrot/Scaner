@@ -8,7 +8,6 @@ def scan_tcp_port(ip, port):
 	try:
 		connect = sock.connect((ip, port))
 		print('Port TCP :', port, ' opened')
-		connect.close()
 	except:
 		print('Port TCP :',  port, ' closed')
 	finally:
