@@ -19,8 +19,8 @@ def scan_udp_port(ip, port):
 		sock.settimeout(0.5)
 		conn = sock.connect((ip, port))
 		try:
-			if ports == "80":
-				sock.sendto("GET HTTP/1.1  \r\n", (ip, port))
+			if port == 80:
+				sock.sendto(str.encode("GET HTTP/1.1  \r\n"), (ip, port))
 			else:
 				sock.sendto(str.encode(" \r\n "), (ip, port))
 			data = sock.recvfrom(1024)
